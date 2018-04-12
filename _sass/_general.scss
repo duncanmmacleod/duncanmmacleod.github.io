@@ -34,14 +34,12 @@ img.gravatar {
 		background-color: transparent;
 		border-color: transparent;
 		.nav-item {
-				@media (min-width: 768px) {
-						background-color: #333;
-						opacity: .8;
-						margin-right: 10px;
-						border-radius: 5px;
-						margin-top: -20px;
-						padding-top: 10px;
-				}
+				background-color: #333;
+				opacity: .8;
+				margin-right: 10px;
+				border-radius: 5px;
+				margin-top: -20px;
+				padding-top: 10px;
 		}
 }
 
