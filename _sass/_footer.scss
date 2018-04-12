@@ -1,0 +1,33 @@
+// _footer.scss
+
+$footer-height: 140px;
+
+html {
+		position: relative;
+		min-height: 100%;
+}
+
+body {
+		margin-bottom: $footer-height;
+}
+
+footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		font-size: 16px;
+		height: $footer-height;
+		text-align: center;
+
+		> .container {
+				margin-top: 20px;
+				margin-bottom: 20px;
+		}
+
+		p {
+				padding: 10px 0px;
+				margin: 0;
+				display: block;
+				font-size: inherit;
+		}
+}

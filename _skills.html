@@ -1,0 +1,24 @@
+<div class="section bg-dark text-light">
+  <div class="container">
+    <h1>Skills</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <ul class="list-group list-group-flush skills">
+          {% include skill.html name="Python" level="Expert" context="success" long="Systems development in Python (2.x and 3.x)" %}
+          {% include skill.html name="Bash" level="Expert" context="success" long="Systems development in Bash" %}
+          {% include skill.html name="Web development" level="Expert" context="success" long="Modern, mobile-first web development in HTML5, including CSS (with SASS), Javascript (with Jquery), and Bootstrap" %}
+          {% include skill.html name="Version control (git)" level="Expert" context="success" long="Software version control in Git, including GitHub and GitLab" %}
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <ul class="list-group list-group-flush skills">
+          {% include skill.html name="Software packaging" level="Expert" context="success" long="Debian, RHEL, Macports, Docker"%}
+          {% include skill.html name="Continuous Integration" level="Expert" context="success" long="Continuous integration and testing with Travis-CI and GitLab-CI" %}
+          {% include skill.html name="Django" level="Experienced" context="info"  long="Web app development with Django" %}
+          {% include skill.html name="C" level="Intermediate" context="info" long="Systems development in C"%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

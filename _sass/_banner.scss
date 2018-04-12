@@ -1,0 +1,54 @@
+.banner {
+		/* background image */
+		background-image: url(/static/images/sunset.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+
+		/* positioning */
+		margin-top: -56px;
+		height: 300px;
+		padding-top: 100px;
+		margin-bottom: 20px;
+		@media (min-width: 768px) {
+				height: 500px;
+				padding-top: 300px;
+				padding-bottom: 50px;
+				text-align: right;
+				.page-header {
+				}
+		}
+
+		/* formatting */
+		color: white;
+		font-variant: small-caps;
+
+		.page-header {
+				width: 100%;
+				padding: 0 20px;
+				text-align: center;
+				@media (min-width: 576px) {
+						padding: 0;
+						width: 100%;
+				}
+				@media (min-width: 768px) {
+						float: right;
+						width: 700px;
+				}
+		}
+}
+
+.banner-small {
+		height: 100px !important;
+		padding-top: 40px !important;
+
+		.page-header {
+				text-align: left;
+				@media (min-width: 768px) {
+						float: none;
+				}
+		}
+}

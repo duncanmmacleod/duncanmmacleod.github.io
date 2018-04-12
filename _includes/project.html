@@ -1,0 +1,9 @@
+      <div class="card mb-4 bg-dark text-light">
+        <div class="card-body">
+          <h3 class="card-title">{{ include.name }}</h3>
+          <p class="card-text">{{ include.desc }}<p>
+        </div>
+        <div class="card-footer">
+          <a href="{{ include.url_base }}/{{ include.tag }}" target="_blank"><i class="{{ include.class }}" style="padding-right: 5px;"></i>{{ include.tag }}</a>
+        </div>
+      </div>
