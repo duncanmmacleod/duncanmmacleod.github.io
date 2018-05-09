@@ -1,6 +1,9 @@
 <head>
-  <title>{{ include.title }}</title>
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
 
+  <title>{{ include.title }}</title>
   <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'index.html',''}}">
   <link rel="icon" href="/static/images/favicon.ico">
 
