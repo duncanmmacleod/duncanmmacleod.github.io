@@ -13,24 +13,29 @@ title: Duncan Macleod's personal website
 </div>
 
 <!-- profile -->
-<div class="container section" id="profile" style="padding-top: 30px;">
-  <div class="row">
-    <div class="col-md-3 gravatar mb-4">
-      <img class="img-fluid rounded gravatar" src="https://www.gravatar.com/avatar/908e4540ff5f9fe2f2a71380302cfe55.jpg?s=400">
-    </div>
-    <div class="col-md-9">
-      <h1>About me</h1>
-      <p>I am a S&ecirc;r Cymru Research Fellow at <a href="https://cardiff.ac.uk" target="_blank" style="color: #bf0D3e;">Cardiff University</a>.</p>
-      <p>My research focuses on improving analysis of data from ground-based laser interferometer gravitational-wave observatories (e.g. <a href="https://ligo.org" target="_blank">LIGO</a> and <a href="https://www.ego-gw.it" target="_blank">Virgo</a>) by developing better software.</p>
-      <span>From my perspective 'better' is synonymous with 'easier to use', meaning the software should be:</span>
-      <ul style="padding-top": >
-        <li><strong>intuitive</strong> (easy to use without reading the manual),</li>
-        <li><strong>well-documented</strong> (has a good manual), and</li>
-        <li><strong>robust</strong> (doesn't crash when it shouldn't)</li>
-      </ul>
+<div class="bg-dark text-light">
+  <div class="container section" id="profile" style="padding-top: 30px;">
+    <div class="row">
+      <div class="col-md-3 gravatar mb-4">
+        <img class="img-fluid rounded gravatar" src="https://www.gravatar.com/avatar/908e4540ff5f9fe2f2a71380302cfe55.jpg?s=400">
+      </div>
+      <div class="col-md-9">
+        <h1>About me</h1>
+        <p>I am a S&ecirc;r Cymru Research Fellow at <a href="https://cardiff.ac.uk" target="_blank" style="color: #bf0D3e;">Cardiff University</a>.</p>
+        <p>My research focuses on improving analysis of data from ground-based laser interferometer gravitational-wave observatories (e.g. <a href="https://ligo.org" target="_blank">LIGO</a> and <a href="https://www.ego-gw.it" target="_blank">Virgo</a>) by developing better software.</p>
+        <span>From my perspective 'better' is synonymous with 'easier to use', meaning the software should be:</span>
+        <ul style="padding-top": >
+          <li><strong>intuitive</strong> (easy to use without reading the manual),</li>
+          <li><strong>well-documented</strong> (has a good manual), and</li>
+          <li><strong>robust</strong> (doesn't crash when it shouldn't)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- experience -->
+{% include_relative _experience.html %}
 
 <!-- skills -->
 {% include_relative _skills.html %}
