@@ -63,17 +63,26 @@ def get_azure_build_id(session, feedstock_name):
         raise
 
 
+def is_archived(gh, feedstock_name):
+    return gh.get_repo(
+        "conda-forge/{}-feedstock".format(feedstock_name),
+    ).archived
+
+
 gh = github.Github(os.environ["GITHUB_PAT_READ_USER"])
 feedstocks = []
 with requests.Session() as sess:
     for team in gh.get_user().get_teams():
-        if team.name in SKIP:
+        name = team.name
+        if (
+            name in SKIP
+            or team.organization.name != "conda-forge"
+            or is_archived(gh, name)
+        ):
             continue
-        if team.organization.name == "conda-forge":
-            name = team.name
-            azureid = get_azure_build_id(sess, name)
-            feedstocks.append({"name": name, "azureid": azureid})
-            logging.info("found {} ({})".format(name, azureid))
+        azureid = get_azure_build_id(sess, name)
+        feedstocks.append({"name": name, "azureid": azureid})
+        logging.info("found {} ({})".format(name, azureid))
 feedstocks.sort(key=itemgetter('name'))
 
 with open(CONDA_FORGE_INDEX, "w") as f:
