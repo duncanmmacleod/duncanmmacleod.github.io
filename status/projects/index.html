@@ -1,0 +1,28 @@
+---
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Project status</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <h1>Development projects status</h1>
+      <table class="table table-sm table-hover table-striped table-condensed">
+        <caption>Status of my development projects</caption>
+        <thead>
+          <tr><th>Package</th><th>Build</th><th>Issues</th><th>Pull requests</th></tr>
+        </thead>
+        <tbody>
+          {% include github.html name="GWpy" github="gwpy/gwpy" workflow="build" %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
