@@ -2,11 +2,14 @@
 
 import logging
 import os
+import sys
 from operator import itemgetter
 from pathlib import Path
 
 import github
+
 import jinja2
+
 import requests
 
 logging.basicConfig(format="[%(asctime)s] %(message)s", level=logging.INFO)
@@ -69,22 +72,27 @@ def is_archived(gh, feedstock_name):
     ).archived
 
 
-gh = github.Github(os.environ["GITHUB_PAT_READ_USER"])
-feedstocks = []
-with requests.Session() as sess:
-    for team in gh.get_user().get_teams():
-        name = team.name
-        if (
-            name in SKIP
-            or team.organization.name != "conda-forge"
-            or is_archived(gh, name)
-        ):
-            continue
-        azureid = get_azure_build_id(sess, name)
-        feedstocks.append({"name": name, "azureid": azureid})
-        logging.info("found {} ({})".format(name, azureid))
-feedstocks.sort(key=itemgetter('name'))
+def main():
+    gh = github.Github(os.environ["GITHUB_PAT_READ_USER"])
+    feedstocks = []
+    with requests.Session() as sess:
+        for team in gh.get_user().get_teams():
+            name = team.name
+            if (
+                name in SKIP
+                or team.organization.name != "conda-forge"
+                or is_archived(gh, name)
+            ):
+                continue
+            azureid = get_azure_build_id(sess, name)
+            feedstocks.append({"name": name, "azureid": azureid})
+            logging.info("found {} ({})".format(name, azureid))
+    feedstocks.sort(key=itemgetter('name'))
 
-with open(CONDA_FORGE_INDEX, "w") as f:
-    print(CONDA_FORGE_STATUS_TEMPLATE.render(feedstocks=feedstocks), file=f)
-logging.info("updated {}".format(CONDA_FORGE_INDEX))
+    with open(CONDA_FORGE_INDEX, "w") as f:
+        print(CONDA_FORGE_STATUS_TEMPLATE.render(feedstocks=feedstocks), file=f)
+    logging.info("updated {}".format(CONDA_FORGE_INDEX))
+
+
+if __name__ == "__main__":
+    sys.exit(main())
